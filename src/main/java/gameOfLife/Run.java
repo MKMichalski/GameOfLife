@@ -6,17 +6,17 @@ public class Run {
     public static void main(String[] args) {
 
 
-        World world = new World(5);
+        World world = new World(10);
         world.createRandomWorld(10);
+        world.displayWorld();
 
-       int timer = 10;
+       int timer = 100;
 
        while (timer > 0) {
-           world.displayWorld();
            world.generateNewWorld();
            world.displayWorld();
             --timer;
-       }
+                   }
 
     }
 }

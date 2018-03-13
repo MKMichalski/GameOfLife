@@ -9,10 +9,10 @@ public class World {
     private int size;
     private World world[][];
 
-    public World() {
+     World() {
     }
 
-    public World(int size) {
+     World(int size) {
         this.size = size;
         world = new World[size][size];
     }
@@ -26,14 +26,15 @@ public class World {
     }
 
     public void displayWorld() {
-        for (int i = 1; i < world.length; i++) {
-            for (int j = 1; j < world.length; j++) {
+        for (int i = 1; i < world.length-1; i++) {
+            for (int j = 1; j < world.length-1; j++) {
+
                 System.out.print(world[i][j]);
             }
             System.out.println();
         }
         System.out.println("------------------------------------------------------");
-        System.out.println();
+
     }
 
     /**
@@ -48,8 +49,8 @@ public class World {
         deadcell = new DeadCell();
         Random r = new Random();
 
-        for (int i = 0; i < world.length; i++) {
-            for (int j = 0; j < world.length; j++) {
+        for (int i = 1; i < world.length - 1; i++) {
+            for (int j = 1; j < world.length - 1; j++) {
                 int x = r.nextInt(12 - density);
                 if (x == 1) {
                     world[i][j] = livecell;
